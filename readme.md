@@ -1,77 +1,313 @@
-📊 Rapport Final de Projet Data Analyst : Maîtrise Statistique
-Ce rapport présente les résultats d'un sprint d'analyse de données axé sur la maîtrise des concepts statistiques fondamentaux et leur application pratique sur deux datasets réels : la santé publique et l'automobile.
+# 📊 Statistical Data Analysis & Visualization Project
 
-🛠️ Phase 1 – Fondamentaux Statistique : Compréhension & Documentation
-Cette phase pose les bases théoriques nécessaires à toute analyse de données fiable. Une documentation complète de chaque notion a été produite.
-📚 Concepts Clés Abordés :
-* Statistiques descriptives : Moyenne, médiane, variance, écart-type, histogramme, boxplot.
-*Population vs Échantillon : Définitions, méthodes d'échantillonnage et leur justification.
-*Probabilités et distributions : Bernoulli, Binomiale, Poisson, Normale (Gaussienne), Student, Chi-deux.Théorème Central Limite (TCL) : Principe d'approximation d'une moyenne d'échantillons par une loi normale.
-*Échantillonnage et estimation : Évaluation des biais, intervalles de confiance.
-*Tests d'hypothèses : Formalisation (H0/H1), p-value, interprétation et prise de décision avec risque $\alpha$.
+## 📌 Project Overview
 
-Phase 2 – Application Pratique 1 : Analyse de Santé Publique
-Dataset : healthexp.csv (Données mondiales sur les dépenses de santé et l'espérance de vie).
-📈 Visualisations Clés et Résultats
-Nous avons réalisé plusieurs visualisations pour analyser l'évolution des dépenses et de l'espérance de vie, ainsi que la relation entre ces deux variables. L'image suivante compile les graphiques clés générés pour cette phase (et pour la phase suivante sur l'automobile).
+This project presents the final report of a Data Analyst sprint focused on mastering fundamental statistical concepts and applying them to real-world datasets.
 
-Figure 1 : Compilation des visualisations clés des deux phases du projet.
+The project combines:
+- Statistical theory
+- Exploratory Data Analysis (EDA)
+- Hypothesis testing
+- Data visualization
+- Business & scientific interpretation
 
-🔍 Analyse Approfondie :
+Two datasets were analyzed:
+1. Public Health Expenditure Dataset
+2. Automobile MPG Dataset
 
-1. Nature des Variables
-*Variables Continues : Spending_USD, Life_Expectancy.
-*Variables Discrètes / Catégorielles : Year, Country.2. Focus sur Spending_USD
+---
 
-2. Analyse univariée :
-*L'histogramme et le boxplot des dépenses montrent une forte asymétrie.
-*Définition précise de la moyenne : La moyenne de Spending_USD représente la dépense de santé moyenne par habitant, calculée pour l'ensemble des observations du dataset (tous pays et toutes années confondus). Elle est fortement influencée par les valeurs très élevées des USA.
+# 🎯 Objectives
 
-3. Évolution Temporelle
-*Durée de vie : On observe une tendance générale à la hausse dans tous les pays, avec une stagnation apparente ces dernières années aux USA.
+- Understand and apply descriptive statistics
+- Explore probability distributions and hypothesis testing
+- Perform real-world exploratory data analysis
+- Detect trends, correlations, and anomalies
+- Build insightful visualizations
+- Interpret statistical results for decision-making
 
-*Amélioration du graphique : Un graphique en lignes (lineplot) utilisant une couleur différente pour chaque pays est bien plus lisible qu'un scatterplot unique pour cette analyse.
+---
 
-*Dépenses Allemagne vs Grande Bretagne : Le graphique 2x2 (Haut, Centre-Droit) montre que l'Allemagne a des dépenses de santé nettement plus élevées que la Grande Bretagne sur toute la période, bien que la trajectoire soit similaire.
+# 🛠️ Phase 1 — Statistical Foundations
 
-4. Relations et Anomalies
-*Relation (USA, 2000-2020) : On note une relation positive : l'espérance de vie augmente avec les dépenses, mais la pente de cette augmentation semble faiblir malgré la hausse massive des coûts.
+This phase focused on mastering the theoretical foundations required for reliable data analysis.
 
-*Valeur Aberrante (Outlier) : Les États-Unis sont l'aberration majeure. Ils dépensent considérablement plus que tout autre pays, pour une espérance de vie qui est souvent inférieure à celle de pays plus économes. C'est l'un des "bruits" visibles sur le graphique d'évolution des dépenses.
+## 📚 Statistical Concepts Covered
 
-5. Analyses Statistiques AvancéesCorrélation (SpendingUSD / LifeExpectancy) : 
-*La corrélation de Pearson pour les USA sur 2000-2020 est extrêmement forte (proche de 0.9+). La p-value associée est quasi nulle, indiquant que cette relation n'est pas due au hasard (H0 rejetée).
-*Test d'hypothèse (Bonus) : Pour l'affirmation du politicien (+0.3 an/an aux USA depuis 1970), le test d'hypothèse (avec un niveau de confiance de 98%, $\alpha = 0.02$) a été réalisé. Les résultats précis des tests peuvent être trouvés dans le code d'analyse joint.
+### Descriptive Statistics
+- Mean
+- Median
+- Variance
+- Standard deviation
+- Histogram
+- Boxplot
 
-🚗 Phase 3 – Application Pratique 2 : Dataset Automobile MPG
-Dataset : MPG (Données sur la consommation et les caractéristiques des voitures, 1970-1982).
+### Population vs Sample
+- Definitions
+- Sampling methods
+- Sampling bias
 
-📈 Visualisations Clés et Résultats
-Cette phase a utilisé les graphiques visibles en bas et à droite de la compilation de la Figure 1 pour analyser les tendances de consommation automobile.
+### Probability & Distributions
+- Bernoulli Distribution
+- Binomial Distribution
+- Poisson Distribution
+- Normal (Gaussian) Distribution
+- Student Distribution
+- Chi-Square Distribution
 
-🔍 Analyse Approfondie :
-1. Nature des Variables
-*Variables Continues : mpg, horsepower, weight, acceleration.
+### Central Limit Theorem (CLT)
+Understanding how sample means approximate a normal distribution.
 
-*Variables Discrètes / Catégorielles : cylinders, model_year, origin.
+### Estimation & Confidence Intervals
+- Bias evaluation
+- Confidence intervals
+- Sampling estimation
 
-2. Analyse de mpg (Consommation)
-*Définition précise de la moyenne : La moyenne de mpg (Miles Per Gallon) représente l'efficacité énergétique moyenne de l'ensemble des modèles de voitures testés dans le dataset entre 1970 et 1982. Plus elle est élevée, moins la voiture consomme de carburant.
+### Hypothesis Testing
+- Null hypothesis (H0)
+- Alternative hypothesis (H1)
+- p-value interpretation
+- Decision making using significance level α
 
-*Visualisation univariée : L'histogramme et le boxplot (Figure 1, Bas-Gauche et Bas-Centre) montrent une distribution étalée avec quelques modèles très sobres (haut MPG), mais une majorité située entre 15 et 30 MPG.
+---
 
-3. Relations Clés
-*mpg vs horsepower : Il y a une corrélation négative forte. Plus la puissance (horsepower) augmente, plus la consommation de carburant est élevée (MPG baisse).
+# 🏥 Phase 2 — Public Health Data Analysis
 
-*Ajout de model_year : En analysant par année, on observe une tendance : les modèles plus récents tendent à avoir un meilleur MPG pour une même puissance par rapport aux modèles plus anciens. L'efficacité s'améliore.
+## Dataset
+`healthexp.csv`
 
-*Poids moyen des voitures US (70-82) : On voit une tendance claire à la diminution du poids moyen des voitures américaines, en particulier à partir de la fin des années 70.
-!<[alt text](image.png)
+Dataset containing worldwide healthcare expenditure and life expectancy data.
 
+---
 
+# 📈 Key Analyses & Insights
 
+## Nature of Variables
 
-*cylinders vs model_year : Le scatterplot (Figure 1, Droite) illustre une transition historique. En 1970, on voit beaucoup de moteurs 8 cylindres (les points du haut). Avec le temps, ces points disparaissent, au profit des 4 cylindres (les points du bas). C'est le "downsizing".
+### Continuous Variables
+- Spending_USD
+- Life_Expectancy
 
-"# simplone"  
-"# simplone"  
+### Categorical / Discrete Variables
+- Year
+- Country
+
+---
+
+## Spending_USD Analysis
+
+### Univariate Analysis
+- Histogram and boxplot revealed strong right-skewness
+- US healthcare spending acts as a major outlier
+
+### Mean Interpretation
+The mean of `Spending_USD` represents the average healthcare spending per capita across all countries and years.
+
+This average is heavily influenced by extremely high US spending values.
+
+---
+
+## Time Series Analysis
+
+### Life Expectancy Evolution
+- General upward trend across most countries
+- Noticeable stagnation in recent years in the United States
+
+### Germany vs United Kingdom
+Germany consistently spends more on healthcare than the UK while following similar trends.
+
+---
+
+## Correlation & Outliers
+
+### Spending vs Life Expectancy (USA)
+A strong positive Pearson correlation (~0.9+) was observed between healthcare spending and life expectancy.
+
+### Statistical Significance
+The associated p-value was near zero, indicating the relationship is statistically significant.
+
+### Major Outlier
+The United States represents the strongest anomaly:
+- Extremely high healthcare spending
+- Lower life expectancy than several lower-spending countries
+
+---
+
+## Advanced Statistical Analysis
+
+### Hypothesis Testing
+A statistical hypothesis test was performed on the claim:
+
+> “US life expectancy increased by +0.3 years annually since 1970”
+
+Using:
+- Confidence level: 98%
+- α = 0.02
+
+---
+
+# 🚗 Phase 3 — Automobile MPG Analysis
+
+## Dataset
+`MPG Dataset`
+
+Dataset containing fuel consumption and vehicle characteristics from 1970–1982.
+
+---
+
+# 📈 Key Analyses & Insights
+
+## Nature of Variables
+
+### Continuous Variables
+- mpg
+- horsepower
+- weight
+- acceleration
+
+### Categorical / Discrete Variables
+- cylinders
+- model_year
+- origin
+
+---
+
+## MPG Analysis
+
+### Mean Interpretation
+The mean MPG represents the average fuel efficiency of all vehicles in the dataset.
+
+Higher MPG values indicate lower fuel consumption.
+
+### Distribution Analysis
+Histogram and boxplot revealed:
+- Wide distribution
+- Majority of vehicles between 15–30 MPG
+- Presence of highly fuel-efficient vehicles
+
+---
+
+## Key Relationships
+
+### MPG vs Horsepower
+Strong negative correlation:
+- Higher horsepower → Lower MPG
+- More power → More fuel consumption
+
+### Effect of Model Year
+Newer vehicles tend to achieve:
+- Better MPG
+- Improved efficiency for similar horsepower
+
+---
+
+## Vehicle Weight Evolution
+
+US vehicles showed a clear decrease in average weight beginning in the late 1970s.
+
+This reflects industry adaptation to:
+- Fuel efficiency concerns
+- Economic changes
+- Oil crisis impacts
+
+---
+
+## Cylinders vs Model Year
+
+The scatterplot revealed a historical transition:
+- Early 1970s dominated by 8-cylinder engines
+- Gradual shift toward 4-cylinder engines
+
+This phenomenon reflects:
+- Engine downsizing
+- Improved fuel economy strategies
+
+---
+
+# 📊 Visualizations Created
+
+| Visualization | Purpose |
+|---|---|
+| Histogram | Distribution analysis |
+| Boxplot | Outlier detection |
+| Scatterplot | Correlation analysis |
+| Time Series | Trend evolution |
+| Comparative Charts | Country & vehicle comparisons |
+
+---
+
+# 🧠 Key Learnings
+
+- Real-world datasets often contain strong outliers
+- Correlation does not always imply efficiency
+- Statistical tests validate whether relationships are significant
+- Visualization is essential for interpreting trends and anomalies
+- Fuel efficiency improved significantly after the 1970s
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Data analysis |
+| Pandas | Data manipulation |
+| NumPy | Numerical computations |
+| Matplotlib | Visualization |
+| Seaborn | Statistical graphics |
+| SciPy | Statistical testing |
+| Jupyter Notebook | Analysis environment |
+
+---
+
+# 📂 Repository Structure
+
+```bash
+📦 statistical-analysis-project/
+├── data/
+│   ├── healthexp.csv
+│   ├── mpg.csv
+│
+├── notebooks/
+│   ├── health_analysis.ipynb
+│   ├── mpg_analysis.ipynb
+│
+├── assets/
+│   ├── visualizations.png
+│
+├── README.md
+└── requirements.txt
+```
+
+---
+
+# 🚀 Possible Extensions
+
+- Add predictive modeling
+- Build interactive dashboards
+- Integrate machine learning algorithms
+- Deploy visualizations with Streamlit
+
+---
+
+# 👨‍💻 Author
+
+**Zoubair Baladi**  
+🎓 Master's Degree in Systems & Telecommunications  
+📊 Passionate about Data Engineering, Data Analysis & Business Intelligence
+
+🔗 LinkedIn:
+https://www.linkedin.com/in/zoubair-baladi/
+
+---
+
+# 📌 Project Title Suggestion for GitHub
+
+## Statistical Data Analysis & Visualization Project
+
+### Alternative Titles
+- Applied Statistics & Exploratory Data Analysis
+- Public Health & Automobile Statistical Analysis
+- Real-World Statistical Analysis with Python
+- Statistical Modeling & Visualization Project
+- Data Analysis & Statistical Insights with Python
